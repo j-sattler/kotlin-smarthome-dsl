@@ -9,4 +9,8 @@ class GroupBuilder {
     fun build(): Group {
         return Group(id, name, subgroups, devices)
     }
+
+    operator fun Device.unaryPlus(){
+        devices.add(this)
+    }
 }

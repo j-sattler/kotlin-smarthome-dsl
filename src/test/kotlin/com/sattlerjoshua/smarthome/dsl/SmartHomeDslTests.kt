@@ -6,7 +6,7 @@ class SmartHomeDslTests {
 
     @Test
     fun `Build Smart Home with DSL`(){
-        println("Hello World")
+
         home("Joshua's Home") {
             id = "H1"
             room("Living Room") {
@@ -25,6 +25,17 @@ class SmartHomeDslTests {
                 device {
                     id = "D3"
                     name = "Ceiling Light"
+                }
+            }
+
+            group("Smart Plugs"){
+                device {
+                    id = "SP1"
+                    name = "Philips Smart Plug"
+                }
+                device {
+                    id = "SP2"
+                    name = "Ikea Smart Plug"
                 }
             }
         }

@@ -30,5 +30,16 @@ home("Joshua's Home") {
             name = "Ceiling Light"
         }
     }
+
+    group("Smart Plugs"){
+        device {
+            id = "SP1"
+            name = "Philips Smart Plug"
+        }
+        device {
+            id = "SP2"
+            name = "Ikea Smart Plug"
+        }
+    }
 }
 ```
