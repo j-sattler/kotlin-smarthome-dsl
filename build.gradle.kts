@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.4.30"
+    kotlin("plugin.serialization") version "1.4.30"
 }
 
 group = "com.sattlerjoshua"
@@ -11,7 +12,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.junit.jupiter:junit-jupiter")

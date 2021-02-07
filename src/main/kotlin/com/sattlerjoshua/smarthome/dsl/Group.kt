@@ -1,5 +1,8 @@
 package com.sattlerjoshua.smarthome.dsl
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Group(
     val id: String,
     val name: String,

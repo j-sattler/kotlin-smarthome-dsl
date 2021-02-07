@@ -1,8 +1,8 @@
 package com.sattlerjoshua.smarthome.dsl
 
 class DeviceBuilder {
-    lateinit var id: String
-    lateinit var name: String
+    var id = ""
+    var name = ""
 
     fun build():Device{
         return Device(id, name)

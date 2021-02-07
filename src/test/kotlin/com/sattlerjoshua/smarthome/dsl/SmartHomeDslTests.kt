@@ -1,13 +1,16 @@
 package com.sattlerjoshua.smarthome.dsl
 
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Test
 
 class SmartHomeDslTests {
 
     @Test
     fun `Build Smart Home with DSL`(){
+        val json = Json{ prettyPrint = true}
 
-        home("Joshua's Home") {
+        val home = home("Joshua's Home") {
             id = "H1"
             room("Living Room") {
                 id = "R1"
@@ -39,5 +42,7 @@ class SmartHomeDslTests {
                 }
             }
         }
+
+        println(json.encodeToString(home))
     }
 }
