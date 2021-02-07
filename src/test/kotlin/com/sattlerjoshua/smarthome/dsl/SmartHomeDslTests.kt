@@ -41,6 +41,17 @@ class SmartHomeDslTests {
                     name = "Ikea Smart Plug"
                 }
             }
+
+            automation("Fetch Weather Information"){
+
+                startOn {
+                    name = "person enters room"
+                }
+
+                execute {
+                    name = "GET https://weatherinfo.com/berln"
+                }
+            }
         }
 
         println(json.encodeToString(home))

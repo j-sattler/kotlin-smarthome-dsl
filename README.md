@@ -4,7 +4,8 @@ Goal of this project is to model a smart home using type-safe builders in kotlin
 
 Motivation
 ---
-Learn how to use [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html) in kotlin to create easy to use DSLs.
+Learn how to use [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html) in kotlin to create
+easy to use DSLs.
 
 Example
 ---
@@ -31,7 +32,7 @@ home("Joshua's Home") {
         }
     }
 
-    group("Smart Plugs"){
+    group("Smart Plugs") {
         device {
             id = "SP1"
             name = "Philips Smart Plug"
@@ -41,6 +42,17 @@ home("Joshua's Home") {
             name = "Ikea Smart Plug"
         }
     }
+
+    automation("Fetch Weather Information") {
+
+        startOn {
+            name = "person enters room"
+        }
+
+        execute {
+            name = "GET https://weatherinfo.com/berln"
+        }
+    }
 }
 ```
 
@@ -48,53 +60,68 @@ JSON output:
 
 ```json
 {
-    "id": "H1",
-    "name": "Joshua's Home",
-    "groups": [
+  "id": "H1",
+  "name": "Joshua's Home",
+  "groups": [
+    {
+      "id": "R1",
+      "name": "Living Room",
+      "subgroups": [
+      ],
+      "devices": [
         {
-            "id": "R1",
-            "name": "Living Room",
-            "subgroups": [
-            ],
-            "devices": [
-                {
-                    "id": "D1",
-                    "name": "Philips Hue Light Strip"
-                }
-            ]
-        },
-        {
-            "id": "R2",
-            "name": "Bedroom",
-            "subgroups": [
-            ],
-            "devices": [
-                {
-                    "id": "D2",
-                    "name": "Philips Hue Motion Sensor"
-                },
-                {
-                    "id": "D3",
-                    "name": "Ceiling Light"
-                }
-            ]
-        },
-        {
-            "id": "",
-            "name": "Smart Plugs",
-            "subgroups": [
-            ],
-            "devices": [
-                {
-                    "id": "SP1",
-                    "name": "Philips Smart Plug"
-                },
-                {
-                    "id": "SP2",
-                    "name": "Ikea Smart Plug"
-                }
-            ]
+          "id": "D1",
+          "name": "Philips Hue Light Strip"
         }
-    ]
+      ]
+    },
+    {
+      "id": "R2",
+      "name": "Bedroom",
+      "subgroups": [
+      ],
+      "devices": [
+        {
+          "id": "D2",
+          "name": "Philips Hue Motion Sensor"
+        },
+        {
+          "id": "D3",
+          "name": "Ceiling Light"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Smart Plugs",
+      "subgroups": [
+      ],
+      "devices": [
+        {
+          "id": "SP1",
+          "name": "Philips Smart Plug"
+        },
+        {
+          "id": "SP2",
+          "name": "Ikea Smart Plug"
+        }
+      ]
+    }
+  ],
+  "automations": [
+    {
+      "name": "Fetch Weather Information",
+      "triggers": [
+        {
+          "name": "person enters room"
+        }
+      ],
+      "tasks": [
+        {
+          "name": "GET https://weatherinfo.com/berln"
+        }
+      ]
+    }
+  ]
 }
 ```

@@ -3,11 +3,8 @@ package com.sattlerjoshua.smarthome.dsl
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Home(
-    val id: String,
+data class Task(
     val name: String,
-    val groups: Collection<Group>,
-    val automations: Collection<Automation>
 ) {
 
 }
