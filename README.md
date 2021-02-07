@@ -43,3 +43,58 @@ home("Joshua's Home") {
     }
 }
 ```
+
+JSON output:
+
+```json
+{
+    "id": "H1",
+    "name": "Joshua's Home",
+    "groups": [
+        {
+            "id": "R1",
+            "name": "Living Room",
+            "subgroups": [
+            ],
+            "devices": [
+                {
+                    "id": "D1",
+                    "name": "Philips Hue Light Strip"
+                }
+            ]
+        },
+        {
+            "id": "R2",
+            "name": "Bedroom",
+            "subgroups": [
+            ],
+            "devices": [
+                {
+                    "id": "D2",
+                    "name": "Philips Hue Motion Sensor"
+                },
+                {
+                    "id": "D3",
+                    "name": "Ceiling Light"
+                }
+            ]
+        },
+        {
+            "id": "",
+            "name": "Smart Plugs",
+            "subgroups": [
+            ],
+            "devices": [
+                {
+                    "id": "SP1",
+                    "name": "Philips Smart Plug"
+                },
+                {
+                    "id": "SP2",
+                    "name": "Ikea Smart Plug"
+                }
+            ]
+        }
+    ]
+}
+```
