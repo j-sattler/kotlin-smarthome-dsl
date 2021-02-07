@@ -4,7 +4,7 @@ Goal of this project is to model a smart home using type-safe builders in kotlin
 
 Motivation
 ---
-Learn how to use type-safe builders in kotlin to create easy to use DSLs.
+Learn how to use [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html) in kotlin to create easy to use DSLs.
 
 Example
 ---
