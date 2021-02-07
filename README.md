@@ -125,3 +125,10 @@ JSON output:
   ]
 }
 ```
+
+TODO
+---
+- [ ] Make things more generic/reusable
+- [ ] Implement simple cron trigger
+- [ ] Actually execute a task with a trigger
+- [ ] Write an 'engine' to work with the DSL
